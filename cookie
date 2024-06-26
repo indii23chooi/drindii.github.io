@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phang Bakery - Homemade Cookies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
+        }
+        /* Navigation Styles */
+        .navbar {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: #333;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+        /* Hero Styles */
+        .hero {
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-content {
+            background-color: rgba(0,0,0,0.7);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .menu {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .menu-item {
+            text-align: center;
+        }
+        .menu-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .contact {
+            background-color: #f4f4f4;
+        }
+        .contact-info {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container container">
+            <div class="navbar-logo">Phang Bakery</div>
+            <div class="dropdown">
+                <button class="dropbtn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="#contact">Contact Us</a>
+                    <a href="#about">About Us</a>
+                    <a href="#products">Products</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Phang Bakery</h1>
+            <p>Delicious Homemade Cookies</p>
+        </div>
+    </header>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Phang Bakery specializes in creating delightful homemade cookies with unique flavors. Our passion for baking and quality ingredients ensures that every cookie is a taste sensation.</p>
+        </div>
+    </section>
+
+    <section id="products" class="menu-section">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="menu">
+                <div class="menu-item">
+                    <img src="houjicha.jpg" alt="Houjicha Cookies">
+                    <h3>Houjicha Cookies</h3>
+                    <p>RM 6.00/pc</p>
+                </div>
+                <div class="menu-item">
+                    <img src="matcha.jpg" alt="Matcha Cookies">
+                    <h3>Matcha Cookies</h3>
+                    <p>RM 6.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="cocoa.jpg" alt="Cocoa Cookies">
+                    <h3>Cocoa Cookies</h3>
+                    <p>RM 6.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="vanilla.jpg" alt="Vanilla Cookies">
+                    <h3>Vanilla Cookies</h3>
+                    <p>RM 5.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="miso.jpg" alt="Miso Cookies">
+                    <h3>Miso Cookies</h3>
+                    <p>RM 6.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:order@phangbakery.com">order@phangbakery.com</a></p>
+                <p>WhatsApp: <a href="https://wa.me/60129050809">012-9050809</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
