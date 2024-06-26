@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakura Sushi Bar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            background-image: url('hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        header h1 {
+            font-size: 50px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        nav {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        section {
+            padding: 40px 20px;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .menu-item {
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+        }
+        .menu-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sakura Sushi Bar</h1>
+        <p>Experience the finest Japanese cuisine</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to Sakura Sushi Bar, where we serve the most delicious and authentic Japanese sushi. Our experienced chefs use only the freshest ingredients to create mouthwatering dishes that will transport you to Japan with every bite.</p>
+    </section>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-grid" id="menu-grid"></div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: order@sakurasushi.com</p>
+        <p>WhatsApp: 018-2777989</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Sakura Sushi Bar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const menuItems = [
+            { name: "California Roll", price: 12.00, image: "california.jpg" },
+            { name: "Salmon Nigiri", price: 8.00, image: "salmon.jpg" },
+            { name: "Tuna Sashimi", price: 18.00, image: "tuna.jpg" },
+            { name: "Veggie Tempura", price: 9.00, image: "tempura.jpg" },
+            { name: "Miso Soup", price: 4.00, image: "miso.jpg" },
+            { name: "Green Tea Ice Cream", price: 5.00, image: "greentea.jpg" }
+        ];
+
+        const menuGrid = document.getElementById('menu-grid');
+
+        menuItems.forEach(item => {
+            const menuItem = document.createElement('div');
+            menuItem.className = 'menu-item';
+            menuItem.innerHTML = `
+                <img src="${item.image}" alt="${item.name}">
+                <h3>${item.name}</h3>
+                <p>RM ${item.price.toFixed(2)}</p>
+            `;
+            menuGrid.appendChild(menuItem);
+        });
+    </script>
+</body>
+</html>
